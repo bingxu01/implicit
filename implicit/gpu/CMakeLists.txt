@@ -10,7 +10,7 @@ if(CUDAToolkit_FOUND)
     FILE(GLOB faiss_block_select ../../thirdparty/faiss/faiss/gpu/utils/blockselect/*.cu)
 
     # TODO: faiss targets?
-    set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --extended-lambda -Wno-deprecated-gpu-targets")
+    set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --expt-extended-lambda -Wno-deprecated-gpu-targets")
         
     add_library(_cuda MODULE ${_cuda}
         als.cu
