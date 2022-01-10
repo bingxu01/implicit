@@ -50,6 +50,7 @@ class AlternatingLeastSquares(MatrixFactorizationBase):
         iterations=15,
         calculate_training_loss=False,
         random_state=None,
+        item_factors = None,
     ):
         if not implicit.gpu.HAS_CUDA:
             raise ValueError("No CUDA extension has been built, can't train on GPU.")
@@ -66,6 +67,7 @@ class AlternatingLeastSquares(MatrixFactorizationBase):
         self.fit_callback = None
         self.random_state = random_state
         self.cg_steps = 3
+        self.item_factors = item_factors
 
     def fit(self, user_items, show_progress=True):
         """Factorizes the user_items matrix.

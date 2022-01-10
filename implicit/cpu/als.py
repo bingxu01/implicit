@@ -67,6 +67,7 @@ class AlternatingLeastSquares(MatrixFactorizationBase):
         calculate_training_loss=False,
         num_threads=0,
         random_state=None,
+        item_factors = None,
     ):
 
         super().__init__()
@@ -85,6 +86,7 @@ class AlternatingLeastSquares(MatrixFactorizationBase):
         self.fit_callback = None
         self.cg_steps = 3
         self.random_state = random_state
+        self.item_factors = item_factors
 
         # cache for item factors squared
         self._YtY = None
